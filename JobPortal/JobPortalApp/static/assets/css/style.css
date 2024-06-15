@@ -4889,12 +4889,17 @@ form.search-box {
   justify-content: space-between;
   
 }
+form.search-box .inputloc-form {
+  width: 34%;
+  position: relative;
+}
 form.search-box .input-form {
   width: 45%;
   position: relative;
 }
 @media (max-width: 767px) {
-  form.search-box .input-form {
+  form.search-box .input-form,
+  form.search-box .inputloc-form {
     width: 100%;
   }
 }
@@ -4909,28 +4914,44 @@ form.search-box .input-form input {
   border-radius: 10px 0 0 10px;
   position: relative;
 }
+form.search-box .inputloc-form input {
+  height: 70px;
+  width: 100%;
+  color: #777777;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 9px 33px 9px 32px;
+  border: none;
+  border-radius: 0;
+  position: relative;
+}
 @media (max-width: 767px) {
-  form.search-box .input-form input {
+  form.search-box .input-form input,
+  form.search-box .inputloc-form input {
     margin-bottom: 20px;
     border-radius: 10px;
   }
 }
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-  form.search-box .input-form input {
+  form.search-box .input-form input,
+  form.search-box .inputloc-form input {
     padding: 9px 33px 9px 25px;
     margin-bottom: 20px;
     border-radius: 10px;
   }
 }
-form.search-box .input-form input::placeholder {
+form.search-box .input-form input::placeholder,
+form.search-box .inputloc-form input::placeholder {
   color: #616875;
 }
 @media (max-width: 767px) {
-  form.search-box .input-form input::placeholder {
+  form.search-box .input-form input::placeholder,
+  form.search-box .inputloc-form input::placeholder {
     font-size: 13px;
   }
 }
-form.search-box .input-form::before {
+form.search-box .input-form::before,
+form.search-box .inputloc-form::before {
   position: absolute;
   content: "";
   width: 1px;
@@ -4942,12 +4963,14 @@ form.search-box .input-form::before {
   transform: translateY(-50%);
 }
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-  form.search-box .input-form::before {
+  form.search-box .input-form::before,
+  form.search-box .inputloc-form::before {
     display: none;
   }
 }
 @media (max-width: 767px) {
-  form.search-box .input-form::before {
+  form.search-box .input-form::before,
+  form.search-box .inputloc-form::before {
     display: none;
   }
 }
