@@ -5,8 +5,6 @@
 
 ## Custom User Model:
 + Username
-+ FullName/companyname
 + email
 + password
-+ UserType
-+ 
++ UserType (Employer, Seeker)
