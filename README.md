@@ -4,6 +4,7 @@
 + CustomUserModel
 
 ## Custom User Model:
++ Name
 + Username
 + email
 + password

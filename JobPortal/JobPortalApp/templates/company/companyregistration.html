@@ -11,7 +11,8 @@
         <div class="row justify-content-center">
             <div class="col-md-12 col-lg-10">
                 <div class="login-wrap">
-                    <form action="#" class="signin-form d-md-flex">
+                    <form action="#" class="signin-form d-md-flex" method="POST">
+                        {% csrf_token %}
                         <div class="half-left p-4 py-md-5">
                             <div class="w-100">
                                 <h3 class="form-title mb-4"><strong>Company Signup</strong></h3>

@@ -11,7 +11,8 @@
         <div class="row justify-content-center">
             <div class="col-md-12 col-lg-10">
                 <div class="login-wrap">
-                    <form action="#" class="signin-form d-md-flex">
+                    <form action="#" class="signin-form d-md-flex" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
                         <div class="half-left p-4 py-md-5">
                             <div class="w-100">
                                 <h2 class="form-title mb-4"><strong>Job Seeker Signup</strong></h2>
@@ -42,6 +43,10 @@
                                 <span toggle="#password-field"
                                     class="fa fa-fw fa-eye field-icon toggle-password"></span>
                             </div>
+                            <div class="form-group mt-3">
+                                <label class="label" for="name">Upload Your Resume</label>
+                                <input type="file" class="form-control" name="resume" required>
+                            </div>
                             <div class="form-group">
                                 <button type="submit" class="form-control btn btn-secondary rounded submit px-3">Sign Up As Job Seeker</button>
                                 <br><br>
@@ -53,7 +58,6 @@
                                 <h2><strong>Employer</strong></h2>
                                 <p class="w-100 text-center" style="color:white;">&mdash; Find the best candidates for your company. &mdash;</p>
                                 <a href="{% url 'companyRegistration' %}" class="form-control btn btn-secondary rounded submit px-3">Sign Up As Company</a>
-                                
                             </div>                    
                         </div>
                     </form>

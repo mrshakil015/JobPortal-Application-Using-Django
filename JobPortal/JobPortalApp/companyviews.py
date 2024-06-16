@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from JobPortalApp.models import *
 
 def companyRegistration(request):
     
