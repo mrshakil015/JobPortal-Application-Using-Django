@@ -10,7 +10,12 @@ def browsejobPage(request):
     
     return render(request,'browsejob.html')
 
-def registrationPage(request):
+def seekerRegistration(request):
     
     
     return render(request,'registration.html')
+
+def seekerLogin(request):
+    
+    
+    return render(request,'login.html')
