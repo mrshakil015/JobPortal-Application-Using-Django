@@ -4,8 +4,21 @@
 + CustomUserModel
 
 ## Custom User Model:
-+ Name
 + Username
 + email
 + password
 + UserType (Employer, Seeker)
+
+## Employer Model:
++ Company Name
++ Company Address
++ Mobile
++ CompanyLogo
+
+## Seeker Model:
++ Name
++ Address
++ Mobile
++ DateOfBirth
++ ProfileImg
++ Resume
