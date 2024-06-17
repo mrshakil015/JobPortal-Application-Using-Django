@@ -28,10 +28,60 @@ class SeekerModel(models.Model):
     DateOfBirth = models.DateField(null=True)
     ProfileImg = models.ImageField(upload_to='media/seekerImage',null=True)
     Resume = models.FileField(upload_to='media/seekerResume',null=True)
+    LastDegree= models.CharField(max_length=100,null=True)
+    LinkedIn= models.CharField(max_length=100,null=True)
+    GitHub= models.CharField(max_length=100,null=True)
     IonicUser = models.OneToOneField(IonicJobUserModel, on_delete=models.CASCADE, related_name='seekermodel',null=True)
     
     class Meta:
         db_table = 'JobSeeker_Table'
+        
+class QualificationModel(models.Model):
+    IonicUser = models.ForeignKey(IonicJobUserModel,on_delete=models.CASCADE, related_name='qualification',null=True)
+    DegreeName = models.CharField(max_length=100,null=True)
+    InstituteName = models.CharField(max_length=100,null=True)
+    Department = models.CharField(max_length=100,null=True)
+    PassingYear = models.CharField(max_length=100,null=True)
+    Grade = models.CharField(max_length=100,null=True)
     
+    class Meta:
+        db_table = 'Qualification_Table'
+
+class WorkExperienceModel(models.Model):
+    IonicUser = models.ForeignKey(IonicJobUserModel,on_delete=models.CASCADE, related_name='workexperience',null=True)
+    Designation = models.CharField(max_length=100,null=True)
+    InstituteName = models.CharField(max_length=100,null=True)
+    Duration = models.CharField(max_length=100,null=True)
+    
+    class Meta:
+        db_table = 'WorkExperience_Table'
+    
+class JobInfoModel(models.Model):
+    JobTitle = models.CharField(max_length=100, null=True)
+    CompanyName = models.CharField(max_length=100, null=True)
+    Address = models.CharField(max_length=100, null=True)
+    CompanyDescription = models.TextField(null=True)
+    JobDescription = models.TextField(null=True)
+    Qualification = models.CharField(max_length=100, null=True)
+    Salary = models.CharField(max_length=100, null=True)
+    Deadline = models.CharField(max_length=100, null=True)
+    Designation = models.CharField(max_length=100, null=True)
+    Experience = models.CharField(max_length=100, null=True)
+    PostedBy = models.ForeignKey(IonicJobUserModel, on_delete =models.CASCADE, null=True)
+    
+    class Meta:
+        db_table = 'JobInfo_Table'
+    
+    def __str__(self):
+        return self.JobTitle
+    
+class JobApplicantModel(models.Model):
+    Applicant = models.ForeignKey(IonicJobUserModel,on_delete=models.CASCADE, related_name='applicantuser', null=True)
+    Job = models.ForeignKey(JobInfoModel,on_delete=models.CASCADE, null=True)
+    Skills= models.TextField(null=True)
+    Status= models.CharField(max_length=100,default="Pending", null=True)
+    
+    class Meta:
+        db_table = 'Applicant_Table'
     
 
