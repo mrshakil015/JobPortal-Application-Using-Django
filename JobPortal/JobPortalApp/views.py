@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from JobPortalApp.models import *
+from django.contrib import messages
 
 # Create your views here.
 def homePage(request):
@@ -55,6 +56,7 @@ def seekerLogin(request):
 @login_required
 def logoutPage(request):
     logout(request)
+    messages.warning(request, '')
     return redirect('homePage')
 
 @login_required
