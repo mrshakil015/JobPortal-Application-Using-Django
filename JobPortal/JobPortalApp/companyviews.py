@@ -39,7 +39,7 @@ def companyLogin(request):
         
         user = authenticate(username=username, password=password)
         if user:
-            if user.UserType == 'Seeker':
+            if user.UserType == 'Employer':
                 login(request,user)
                 messages.success(request, 'Successfully Login')
                 return redirect('dashboard')
