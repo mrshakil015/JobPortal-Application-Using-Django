@@ -14,6 +14,7 @@ class IonicJobUserModel(AbstractUser):
 class EmployerModel(models.Model):
     CompanyName = models.CharField(max_length=100, null=True)
     CompanyAddress = models.CharField(max_length=100, null=True)
+    CompanyDescription = models.TextField(null=True)
     Mobile = models.CharField(max_length=100, null=True)
     CompanyLogo = models.ImageField(upload_to='media/companylogo',null=True)
     IonicUser = models.OneToOneField(IonicJobUserModel, on_delete=models.CASCADE, related_name='employeermodel',null=True)
@@ -58,18 +59,35 @@ class WorkExperienceModel(models.Model):
     
 class JobInfoModel(models.Model):
     JobTitle = models.CharField(max_length=100, null=True)
-    CompanyName = models.CharField(max_length=100, null=True)
-    Address = models.CharField(max_length=100, null=True)
-    CompanyDescription = models.TextField(null=True)
     JobDescription = models.TextField(null=True)
     Qualification = models.CharField(max_length=100, null=True)
     Salary = models.CharField(max_length=100, null=True)
     Deadline = models.CharField(max_length=100, null=True)
     Designation = models.CharField(max_length=100, null=True)
     Experience = models.CharField(max_length=100, null=True)
+    TotalVacancy = models.CharField(max_length=100, null=True)
+    JOBTYPE = [
+        ('Full Time','Full Time'),
+        ('Part Time','Part Time'),
+        ('Contractual','Contractual'),
+        ('Internship','Internship'),
+        ('Freelance','Freelance'),
+    ]
+    JobType = models.CharField(choices=JOBTYPE, max_length=100, null=True)
+    EXPERIENCELEVEL = [
+        ('Begineer','Begineer'),
+        ('Mid Level','Mid Level'),
+        ('Experienced','Experienced'),
+        ('TopLevel','TopLevel'),
+    ]
+    ExperienceLevel = models.CharField(choices=EXPERIENCELEVEL, max_length=100, null=True)
+    Created_at = models.DateField(auto_now_add=True,null=True)
+    Updated_at = models.DateField(auto_now=True,null=True)
     PostedBy = models.ForeignKey(IonicJobUserModel, on_delete =models.CASCADE, null=True)
     
     class Meta:
+        ordering = ['Created_at']
+        verbose_name = "Job Info"
         db_table = 'JobInfo_Table'
     
     def __str__(self):

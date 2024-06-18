@@ -22,7 +22,7 @@ class WorkDisplay(admin.ModelAdmin):
 admin.site.register(WorkExperienceModel,WorkDisplay)
 
 class JobDisplay(admin.ModelAdmin):
-    list_display=['JobTitle','CompanyName','PostedBy']
+    list_display=['JobTitle','PostedBy']
 admin.site.register(JobInfoModel,JobDisplay)
 
 class ApplicantDisplay(admin.ModelAdmin):

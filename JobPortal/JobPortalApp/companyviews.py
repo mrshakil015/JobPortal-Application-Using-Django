@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login,logout
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from JobPortalApp.views import dashboard
 from JobPortalApp.models import *
-from django.contrib import messages
+from JobPortalApp.forms import *
 
 def companyRegistration(request):
     if request.method == 'POST':
@@ -52,3 +54,28 @@ def companyLogin(request):
     
     return render(request,'company/companylogin.html')
 
+@login_required
+def addjob(request):
+    if request.method == 'POST':
+        current_user = request.user
+        form = JobForm(request.POST)
+        
+        if form.is_valid():
+            job = form.save(commit=False)
+            job.PostedBy = current_user
+            job.save()
+            return redirect('dashboard')
+    else:
+        form = JobForm()
+    context = {
+        'form':form
+    }
+    return render(request,'company/addjob.html',context)
+
+def joblist(request):
+    current_user = request.user
+    jobdata = JobInfoModel.objects.filter(PostedBy=current_user)
+    context ={
+        'jobdata':jobdata
+    }
+    return render(request,'company/joblist.html',context)

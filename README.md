@@ -12,6 +12,7 @@
 ## Employer Model:
 + Company Name
 + Company Address
++ CompanyDescription
 + Mobile
 + CompanyLogo
 
@@ -40,9 +41,9 @@
 
 ## Job Info Model:
 + JobTitle
-+ CompanyName
-+ Address
-+ CompanyDescription
++ CompanyName (Already in Employer Model)
++ Address (Already in Employer Model)
++ CompanyDescription (Already in Employer Model)
 + JobDescription
 + Qualification
 + Salary
@@ -50,7 +51,7 @@
 + Designation
 + Experience
 
-+TotalVacancy
++ TotalVacancy
 + JobType(FullTime,PartTime,Contractual,Internship,Freelance)
 + ExperienceLevel(Begineer,MidLevel,Experienced,TopLevel)
 

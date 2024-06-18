@@ -18,4 +18,9 @@ urlpatterns = [
     path('companyLogin/', companyLogin,name="companyLogin"),
     
     path('dashboard/', dashboard,name="dashboard"),
+    
+    #--------------Job---------------
+    path('addjob/', addjob,name="addjob"),
+    path('joblist/', joblist,name="joblist"),
+    
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
