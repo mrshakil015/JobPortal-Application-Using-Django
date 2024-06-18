@@ -41,16 +41,22 @@ def seekerRegistration(request):
     return render(request,'registration.html')
 
 def seekerLogin(request):
+    
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
         
-        user = authenticate(username=username, password=password)
+        user = authenticate(username=username, password=password,UserType='Seeker')
         if user:
-            login(request,user)
-            messages.success(request, 'Successfully Login')
-            return redirect('dashboard')
+            if user.UserType == 'Seeker':
+                login(request,user)
+                messages.success(request, 'Successfully Login')
+                return redirect('dashboard')
+            else:
+                messages.warning(request, 'Username and Password not valid.')
+                return redirect('seekerLogin')
         else:
+            messages.warning(request, 'Username and Password not valid.')
             return redirect('seekerLogin')
     return render(request,'login.html')
 
