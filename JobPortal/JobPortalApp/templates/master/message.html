@@ -1,0 +1,14 @@
+{% if messages %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        {% for message in messages %}
+            Swal.fire({
+                icon: '{% if message.tags == "success" %}success{% elif message.tags == "warning" %}warning{% endif %}',
+                title: '{% if message.tags == "success" %}Success{% elif message.tags == "warning" %}Warning{% endif %}',
+                text: '{{ message }}',
+            });
+        {% endfor %}
+    });
+</script>
+{% endif %}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

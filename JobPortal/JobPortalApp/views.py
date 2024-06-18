@@ -48,6 +48,7 @@ def seekerLogin(request):
         user = authenticate(username=username, password=password)
         if user:
             login(request,user)
+            messages.success(request, 'Successfully Login')
             return redirect('dashboard')
         else:
             return redirect('seekerLogin')
