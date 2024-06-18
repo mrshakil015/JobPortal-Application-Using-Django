@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login,logout
+from JobPortalApp.views import dashboard
 from JobPortalApp.models import *
 
 def companyRegistration(request):
@@ -30,6 +32,16 @@ def companyRegistration(request):
     return render(request,'company/companyregistration.html')
 
 def companyLogin(request):
-    
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        
+        user = authenticate(username=username, password=password)
+        if user:
+            login(request,user)
+            return redirect('dashboard')
+        else:
+            return redirect('companyLogin')
     
     return render(request,'company/companylogin.html')
+

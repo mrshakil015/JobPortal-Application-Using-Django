@@ -1,0 +1,56 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+<div class="header">
+    <div class="header-left">
+        <a href="{% url 'homePage' %}" class="logo">
+            <img src="{% static 'assets/img/logo/headerlogo.png' %}" alt="">
+        </a>
+        <a href="index.html" class="logo logo-small">
+            <img src="{% static 'assets/img/logo-small-2.png' %}" alt="Logo" width="30" height="30">
+        </a>
+    </div>
+    <a href="javascript:void(0);" id="toggle_btn">
+        <i class="fas fa-align-left"></i>
+    </a>
+    <a class="mobile_btn" id="mobile_btn">
+        <i class="fas fa-bars"></i>
+    </a>
+    <ul class="nav user-menu">
+
+        <li class="nav-item dropdown has-arrow">
+            {% if user.UserType == 'Employer' %}
+            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                <span class="user-img"><img class="rounded-circle" src="/{{user.employeermodel.CompanyLogo}}"
+                    style="border: 2px solid rgb(13, 100, 144, 0.818); object-fit:cover;" width="31" height="31"
+                    alt="img"></span>
+            </a>
+            {% else %}
+            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                <span class="user-img"><img class="rounded-circle" src="/{{user.Seeker.ProfileImg}}"
+                        style="border: 2px solid rgb(13, 100, 144, 0.818); object-fit:cover;" width="31" height="31"
+                        alt="img"></span>
+            </a>
+            {% endif %}
+
+            <div class="dropdown-menu">
+                <div class="user-header">
+
+                    {% if user.UserType == 'Employer' %}
+                    <div class="user-text">
+                        <h6>{{user.employeermodel.CompanyName}}</h6>
+                        <p class="text-muted mb-0">{{user.UserType}}</p>
+                    </div>
+                    {% else %}
+                    <div class="user-text">
+                        <h6>{{user.seekermodel.Name}}</h6>
+                        <p class="text-muted mb-0">{{user.UserType}}</p>
+                    </div>
+                    {% endif %}
+                </div>
+                <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+            </div>
+        </li>
+
+    </ul>
+
+</div>

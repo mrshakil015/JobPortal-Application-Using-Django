@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>Ionic Job - Profile</title>
+
+    <link rel="shortcut icon" href="{% static 'profileassets/img/favicon.png' %}">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;1,400&amp;display=swap">
+    <link rel="stylesheet" href="{% static 'profileassets/plugins/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'profileassets/plugins/fontawesome/css/fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'profileassets/plugins/fontawesome/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'profileassets/plugins/simple-calendar/simple-calendar.css' %}">
+    <link rel="stylesheet" href="{% static 'profileassets/css/style.css' %}">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript"
+        src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript"
+        src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'profileassets/plugins/datatables/datatables.min.css' %}">
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#tabledata').DataTable();
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <div class="main-wrapper">
+
+        {% include 'profilemaster/header.html' %}
+        {% include 'profilemaster/sidebar.html' %}
+
+
+        <div class="page-wrapper">
+            
+            {% block content %}
+                
+            {% endblock content %}
+            {% include 'profilemaster/footer.html' %}
+                
+
+        </div>
+
+    </div>
+
+
+    <script src="{% static 'profileassets/js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'profileassets/js/popper.min.js' %}"></script>
+    <script src="{% static 'profileassets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'profileassets/plugins/slimscroll/jquery.slimscroll.min.js' %}"></script>
+    <script src="{% static 'profileassets/plugins/apexchart/apexcharts.min.js' %}"></script>
+    <script src="{% static 'profileassets/plugins/apexchart/chart-data.js' %}"></script>
+    <script src="{% static 'profileassets/plugins/simple-calendar/jquery.simple-calendar.js' %}"></script>
+    <script src="{% static 'profileassets/js/circle-progress.min.js' %}"></script>
+    <script src="{% static 'profileassets/plugins/datatables/datatables.min.js' %}"></script>
+    <script src="{% static 'profileassets/js/script.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    
+</body>
+
+<!-- Mirrored from preschool.dreamguystech.com/html-template/teacher-dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Oct 2021 11:11:43 GMT -->
+
+</html>
