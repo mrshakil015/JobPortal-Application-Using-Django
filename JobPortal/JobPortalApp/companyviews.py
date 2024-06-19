@@ -64,7 +64,7 @@ def addjob(request):
             job = form.save(commit=False)
             job.PostedBy = current_user
             job.save()
-            return redirect('dashboard')
+            return redirect('postedjob')
     else:
         form = JobForm()
     context = {
@@ -72,10 +72,10 @@ def addjob(request):
     }
     return render(request,'company/addjob.html',context)
 
-def joblist(request):
+def postedjob(request):
     current_user = request.user
     jobdata = JobInfoModel.objects.filter(PostedBy=current_user)
     context ={
         'jobdata':jobdata
     }
-    return render(request,'company/joblist.html',context)
+    return render(request,'company/postedjob.html',context)

@@ -1,0 +1,50 @@
+{% extends 'profilemaster/master.html' %}
+{% block content %}
+{% load static %}
+<div class="content container-fluid">
+    <div class="row">
+        {% for i in jobdata %}
+        <div class="col-sm-12 job-card">
+            <div class="card card-table">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-lg-2 col-6">
+                            <div class="logo">
+                                <img src="/{{user.employeermodel.CompanyLogo}}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-10 col-6 job-title">
+                            <h3>{{i.JobTitle}}</h3>
+                            <button>{{i.ExperienceLevel}}</button>
+                            <p>{{i.PostedBy.employeermodel.CompanyName}}</p>
+                            <span><i class="fas fa-calendar-plus"></i><strong> Posted On:</strong> {{i.Created_at}}</span>
+                            <span><i class="fas fa-calendar"></i><strong> Deadline:</strong> {{i.Deadline}}</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="card-body">
+                    <p>{{i.JobDescription}}</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between">
+                    <div>
+                        <a href="" class="btn btn-rounded alert-primary"><i class="fas fa-briefcase"></i> {{i.JobType}}</a>
+                        <a href="" class="btn btn-rounded alert-info"><i class="fas fa-wallet"></i> {{i.Salary}}</a>
+                        <a href="" class="btn btn-rounded alert-warning"><i class="fas fa-flag"></i> {{i.ExperienceLevel}}</a>
+                        <a href="" class="btn btn-rounded alert-success"><i class="fas fa-user-plus"></i> {{i.TotalVacancy}}</a>
+                        <a href="" class="btn btn-rounded btn-info"><i class="far fa-eye"></i> View</a>
+                        <a href="" class="btn btn-rounded btn-success"><i class="fas fa-pencil-alt"></i> Edit</a>
+                        <a href="" class="btn btn-rounded btn-danger"><i class="fas fa-trash-alt"></i> Delete</a>
+                    </div>
+                    <div>
+                        <a href="" class="btn btn-rounded btn-primary"><i class="fas fa-mouse-pointer"></i> Apply Now</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,9 +1,3 @@
-/*
-Author       : Dreamguys
-Template Name: Preskool - Bootstrap Admin Template
-Version      : 1.0
-*/
-
 /*============================
  [Table of CSS]
 
@@ -77,7 +71,7 @@ input:-webkit-autofill:focus {
     height: 40px;
 }
 .form-control:focus {
-	border-color: #4a45cf;
+	border-color: #127e80;
 	box-shadow: none;
 	outline: 0 none;
 }
@@ -195,7 +189,7 @@ table.table td h2 a {
 	color: #333;
 }
 table.table td h2 a:hover {
-	color: #4a45cf;
+	color: #127e80;
 }
 table.table td h2 span {
 	color: #888;
@@ -410,7 +404,7 @@ button.bg-danger:hover {
 }
 .text-primary,
 .dropdown-menu > li > a.text-primary {
-	color: #4a45cf !important;
+	color: #127e80 !important;
 }
 .text-success,
 .dropdown-menu > li > a.text-success {
@@ -436,8 +430,8 @@ button.bg-danger:hover {
     color: #757575 !important;
 }
 .btn-primary {
-	background-color: #4a45cf;
-	border: 1px solid #4a45cf;
+	background-color: #127e80;
+	border: 1px solid #127e80;
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -472,8 +466,8 @@ button.bg-danger:hover {
 	box-shadow: unset;
 }
 .btn-primary.disabled, .btn-primary:disabled {
-    background-color: #4a45cf;
-    border-color: #4a45cf;
+    background-color: #127e80;
+    border-color: #127e80;
     color: #fff;
 }
 .btn-secondary.active:focus:not(:disabled):not(.disabled), 
@@ -657,12 +651,12 @@ button.bg-danger:hover {
     box-shadow: unset;
 }
 .btn-outline-primary {
-	color: #4a45cf;
-	border-color: #4a45cf;
+	color: #127e80;
+	border-color: #127e80;
 }
 .btn-outline-primary:hover {
-	background-color: #4a45cf;
-	border-color: #4a45cf;
+	background-color: #127e80;
+	border-color: #127e80;
 }
 .btn-outline-primary:focus, 
 .btn-outline-primary.focus {
@@ -670,14 +664,14 @@ button.bg-danger:hover {
 }
 .btn-outline-primary.disabled, 
 .btn-outline-primary:disabled {
-	color: #4a45cf;
+	color: #127e80;
 	background-color: transparent;
 }
 .btn-outline-primary:not(:disabled):not(.disabled):active, 
 .btn-outline-primary:not(:disabled):not(.disabled).active,
 .show > .btn-outline-primary.dropdown-toggle {
-	background-color: #4a45cf;
-	border-color: #4a45cf;
+	background-color: #127e80;
+	border-color: #127e80;
 }
 .btn-outline-primary:not(:disabled):not(.disabled):active:focus, 
 .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
@@ -805,22 +799,22 @@ button.bg-danger:hover {
 .pagination > .active > span,
 .pagination > .active > span:focus,
 .pagination > .active > span:hover {
-	background-color: #4a45cf;
-	border-color: #4a45cf;
+	background-color: #127e80;
+	border-color: #127e80;
 }
 .pagination > li > a, 
 .pagination > li > span {
-	color: #4a45cf;
+	color: #127e80;
 }
 .page-link:hover {
-	color: #4a45cf;
+	color: #127e80;
 }
 .page-link:focus {
 	box-shadow: unset;
 }
 .page-item.active .page-link {
-	background-color: #4a45cf;
-	border-color: #4a45cf;
+	background-color: #127e80;
+	border-color: #127e80;
 }
 .dropdown-menu {
 	border: 1px solid rgba(0, 0, 0, 0.1);
@@ -830,7 +824,7 @@ button.bg-danger:hover {
 	background-color: #fff;
 }
 .dropdown-item.active, .dropdown-item:active {
-    background-color: #4a45cf;
+    background-color: #127e80;
 }
 .navbar-nav .open .dropdown-menu {
 	border: 0;
@@ -842,7 +836,8 @@ button.bg-danger:hover {
 }
 .card {
     border: 1px solid #ececf5;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03);
+    -webkit-box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
+	border-radius: 10px;
     margin-bottom: 1.875rem;
 }
 .card-body {
@@ -876,11 +871,11 @@ button.bg-danger:hover {
 	color: #a6a6a6;
 }
 .bootstrap-datetimepicker-widget table td.active, .bootstrap-datetimepicker-widget table td.active:hover {
-	background-color: #4a45cf;
+	background-color: #127e80;
 	text-shadow: unset;
 }
 .bootstrap-datetimepicker-widget table td.today:before{
-	border-bottom-color:#4a45cf;
+	border-bottom-color:#127e80;
 }
 .bg-info-light{
 	background-color:#009efb !important;
@@ -992,8 +987,8 @@ div.dataTables_wrapper div.dataTables_info {
 .nav-tabs.nav-tabs-solid > .active > a,
 .nav-tabs.nav-tabs-solid > .active > a:hover,
 .nav-tabs.nav-tabs-solid > .active > a:focus {
-	background-color: #4a45cf;
-	border-color: #4a45cf;
+	background-color: #127e80;
+	border-color: #127e80;
 	color: #fff;
 }
 .tab-content {
@@ -1024,8 +1019,8 @@ div.dataTables_wrapper div.dataTables_info {
 .nav-tabs.nav-tabs-solid > li > a.active,
 .nav-tabs.nav-tabs-solid > li > a.active:hover,
 .nav-tabs.nav-tabs-solid > li > a.active:focus {
-	background-color: #4a45cf;
-	border-color: #4a45cf;
+	background-color: #127e80;
+	border-color: #127e80;
 	color: #fff;
 }
 .nav-tabs.nav-tabs-solid.nav-tabs-rounded {
@@ -1077,7 +1072,7 @@ div.dataTables_wrapper div.dataTables_info {
 .nav-tabs.nav-tabs-top > li > a.active,
 .nav-tabs.nav-tabs-top > li > a.active:hover,
 .nav-tabs.nav-tabs-top > li > a.active:focus {
-	border-top-color: #4a45cf;
+	border-top-color: #127e80;
 }
 .nav-tabs.nav-tabs-bottom > li {
 	margin-bottom: -1px;
@@ -1087,7 +1082,7 @@ div.dataTables_wrapper div.dataTables_info {
 .nav-tabs.nav-tabs-bottom > li > a.active:focus {
 	border-bottom-width: 2px;
 	border-color: transparent;
-	border-bottom-color: #4a45cf;
+	border-bottom-color: #127e80;
 	background-color: transparent;
 	transition: none 0s ease 0s; 
 	-moz-transition: none 0s ease 0s; 
@@ -1188,7 +1183,7 @@ div.dataTables_wrapper div.dataTables_info {
 .avatar-title {
 	width: 100%;
 	height: 100%;
-	background-color: #4a45cf;
+	background-color: #127e80;
 	color: #fff;
 	display: flex;
 	align-items: center;
@@ -1456,11 +1451,11 @@ div.dataTables_wrapper div.dataTables_info {
     padding: 10px 15px;
 }
 .user-menu .dropdown-menu .dropdown-item:hover {
-    color: #4a45cf;
+    color: #127e80;
 }
 .header .dropdown-menu > li > a:focus,
 .header .dropdown-menu > li > a:hover {
-	background-color: #4a45cf;
+	background-color: #127e80;
 	color: #fff;
 }
 .header .dropdown-menu > li > a:focus i,
@@ -1471,13 +1466,13 @@ div.dataTables_wrapper div.dataTables_info {
 	padding: 10px 18px;
 }
 .header .dropdown-menu > li > a i {
-	color: #4a45cf;
+	color: #127e80;
 	margin-right: 10px;
 	text-align: center;
 	width: 18px;
 }
 .header .user-menu .dropdown-menu > li > a i {
-	color: #4a45cf;
+	color: #127e80;
 	font-size: 16px;
 	margin-right: 10px;
 	min-width: 18px;
@@ -1551,7 +1546,7 @@ html.menu-opened body {
 .top-nav-search .btn {
     background-color: transparent;
     border-color: transparent;
-    color: #4a45cf;
+    color: #127e80;
     min-height: 40px;
     padding: 7px 15px;
     position: absolute;
@@ -2016,7 +2011,7 @@ footer p {
 	color: #333;
 }
 .user-menu.nav > li > a .badge {
-	background-color: #4a45cf;
+	background-color: #127e80;
     display: block;
     font-size: 10px;
     font-weight: bold;
@@ -2396,7 +2391,7 @@ footer p {
 .fc-state-down,
 .fc-state-active,
 .fc-state-disabled {
-	background-color: #4a45cf !important;
+	background-color: #127e80 !important;
 	color: #fff !important;
 	text-shadow: none !important;
 }
@@ -2465,7 +2460,7 @@ footer p {
 	padding: 10px;
 }
 .mail-list > li.active > a {
-	color: #4a45cf;
+	color: #127e80;
 	font-weight: bold;
 }
 .unread .name,
@@ -2592,7 +2587,7 @@ table.table-inbox tbody tr.checked {
     width: 100%;
 }
 .error-box h1 {
-    color: #4a45cf;
+    color: #127e80;
     font-size: 10em;
 }
 .error-box p {
@@ -3197,7 +3192,7 @@ table.table-inbox tbody tr.checked {
 		color: #18aefa;
 	}
 	.user-menu.nav > li > a .badge {
-		background-color: #4a45cf;
+		background-color: #127e80;
 		color: #fff;
 	}
 	.user-menu.nav > li > a:hover i, .user-menu.nav > li > a:focus i {
@@ -3461,4 +3456,51 @@ table.table-inbox tbody tr.checked {
 		width: 310px;
 		height: 355px;
 	}
+}
+
+/*-----------------
+	Job List card
+-----------------------*/
+
+.card .logo {
+	width: 100px;
+	height: 60px;
+}
+.card .logo img {
+	width: 100%;
+	height:auto;
+}
+.job-info {
+	display: flex;
+	align-items: flex-start; /* Align items at the top */
+}
+.card .logo {
+	display: flex;
+	align-items: center;
+	border: 1px solid #d5d5d5;
+	border-radius: 5px;
+	padding: 5px;
+	margin-right: 15px; /* Adjust as needed for spacing */
+}
+.card .job-title h3 {
+	margin: 0;
+	font-size: 20px;
+	font-weight: 900;
+}
+.card .job-title button {
+	margin: 0;
+	font-size: 14px;
+	font-weight: 400;
+	background: #00999c;
+	color: #fff;
+	padding: 5px;
+	border-radius: 10px;
+	border: none;     
+	cursor: auto;   
+}
+.card .job-title p{
+	padding: 0;
+	margin: 0;
+	font-size: 15px;
+	margin: 3px 0;
 }

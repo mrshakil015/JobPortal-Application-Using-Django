@@ -11,7 +11,6 @@ def homePage(request):
 
 def browsejobPage(request):
     
-    
     return render(request,'browsejob.html')
 
 def seekerRegistration(request):

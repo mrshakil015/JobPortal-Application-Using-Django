@@ -9,7 +9,7 @@ class JobForm(forms.ModelForm):
         
         widgets = {
             'Deadline':forms.DateInput(attrs={
-              'type'  :'date','class':'date-field'
+              'type'  :'date'
             }),
             'Created_at':forms.DateInput(attrs={
                 'type':'date'
