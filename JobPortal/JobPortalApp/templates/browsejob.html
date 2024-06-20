@@ -1,6 +1,140 @@
 {% extends 'master/master.html' %}
 
 {% block content %}
+{% load static %}
+<style>
+    
+/*-----------------
+	Job List card
+-----------------------*/
+.btn-rounded{
+    padding: 10px;
+    border-radius: 50px;
+}
+.card {
+    border: 1px solid #ececf5;
+    box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
+	border-radius: 10px;
+    margin-bottom: 1.875rem;
+}
+.card-body {
+	padding: 1rem;
+}
+.card-header {
+	border-bottom: 1px solid #e6e6e6;
+	padding: 1rem 1.5rem;
+}
+.card-footer {
+	background-color: #fff;
+	border-top: 1px solid #e6e6e6;
+	padding: 1rem 1.5rem;
+}
+.card .card-header {
+    background-color: #fff;
+    border-bottom: 1px solid #eaeaea;
+}
+.card .card-header .card-title {
+    margin-bottom: 0;
+    font-size: 18px;
+}
+.card .logo {
+	width: 100px;
+	height: 60px;
+}
+.card .logo img {
+	width: 100%;
+	height:auto;
+}
+.job-info {
+	display: flex;
+	align-items: flex-start; /* Align items at the top */
+}
+.card .card-header i{
+    color: #00999c;
+}
+.card .logo {
+	display: flex;
+	align-items: center;
+	border: 1px solid #d5d5d5;
+	border-radius: 5px;
+	padding: 5px;
+	margin-right: 15px; /* Adjust as needed for spacing */
+}
+.card .job-title h3 {
+	margin: 0;
+	font-size: 20px;
+	font-weight: 900;
+}
+.card .job-title button {
+	margin: 0;
+	font-size: 14px;
+	font-weight: 400;
+	background: #00999c;
+	color: #fff;
+	padding: 5px;
+	border-radius: 10px;
+	border: none;     
+	cursor: auto;   
+}
+.card .job-title p{
+	padding: 0;
+	margin: 0;
+	font-size: 15px;
+	margin: 3px 0;
+}
+</style>
+
+    <div class="container">
+        <div class="row">
+            {% for i in jobdata %}
+            <div class="col-sm-12 job-card mt-3 mb-3">
+                <div class="card card-table">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-lg-2 col-6">
+                                <div class="logo">
+                                    <img src="/{{i.PostedBy.employeermodel.CompanyLogo}}" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-10 col-6 job-title">
+                                <h3>{{i.JobTitle}}</h3>
+                                <button>{{i.ExperienceLevel}}</button>
+                                <p>{{i.PostedBy.employeermodel.CompanyName}}</p>
+                                <p><i class="fas fa-map-marker-alt"></i> {{i.PostedBy.employeermodel.CompanyAddress}}</p>
+                                <span><i class="fas fa-calendar-check"></i><strong> Posted On:</strong> {{i.Created_at}}</span>
+                                <span><i class="fas fa-clock"></i><strong> Deadline:</strong> {{i.Deadline}}</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="card-body">
+                        <p>{{i.JobDescription}}</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <div>
+                            <span href="" class="btn-rounded alert-primary"><i class="fas fa-briefcase"></i> {{i.JobType}}</span>
+                            <span class="btn-rounded alert-info"><i class="fas fa-money-bill-alt"></i> {{i.Salary}}</span>
+                            <span class="btn-rounded alert-warning"><i class="fas fa-flag"></i> {{i.ExperienceLevel}}</span>
+                            <span class="btn-rounded alert-success"><i class="fas fa-user-plus"></i> {{i.TotalVacancy}}</span>
+                            <a href="" class="btn-rounded btn-info"><i class="fas fa-eye"></i> View</a>
+                            
+                            {% if user.is_authenticated %}
+                            <a href="" class="btn-rounded btn-success"><i class="fas fa-pencil-alt"></i> Edit</a>
+                            <a href="" class="btn-rounded btn-danger"><i class="fas fa-trash-alt"></i> Delete</a>
+                            {% endif %}
+                                
+                        </div>
+                        <div>
+                            <a href="" class="btn-rounded btn-primary"><i class="fas fa-hand-pointer"></i> Apply Now</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
 
 {% endblock content %}
     

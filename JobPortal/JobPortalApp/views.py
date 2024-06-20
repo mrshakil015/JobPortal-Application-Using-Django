@@ -10,8 +10,11 @@ def homePage(request):
     return render(request,'index.html')
 
 def browsejobPage(request):
-    
-    return render(request,'browsejob.html')
+    jobdata = JobInfoModel.objects.all()
+    context ={
+        'jobdata':jobdata
+    }    
+    return render(request,'browsejob.html',context)
 
 def seekerRegistration(request):
     if request.method == 'POST':
