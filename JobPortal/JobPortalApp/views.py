@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect, get_object_or_404
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from JobPortalApp.models import *
@@ -14,7 +14,16 @@ def browsejobPage(request):
     context ={
         'jobdata':jobdata
     }    
-    return render(request,'browsejob.html',context)
+    return render(request,'jobinfo/browsejob.html',context)
+
+def viewjob(request,myid):
+    jobdata = get_object_or_404(JobInfoModel, id=myid)
+    
+    context = {
+        'jobdata':jobdata
+    }
+    
+    return render(request,'jobinfo/viewjob.html',context)
 
 def seekerRegistration(request):
     if request.method == 'POST':

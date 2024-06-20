@@ -50,7 +50,6 @@
 + Deadline
 + Designation
 + Experience
-
 + TotalVacancy
 + JobType(FullTime,PartTime,Contractual,Internship,Freelance)
 + ExperienceLevel(Begineer,MidLevel,Experienced,TopLevel)

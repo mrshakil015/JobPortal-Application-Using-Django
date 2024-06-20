@@ -1,8 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from JobPortalApp.views import dashboard
 from JobPortalApp.models import *
 from JobPortalApp.forms import *
 
@@ -44,7 +43,7 @@ def companyLogin(request):
             if user.UserType == 'Employer':
                 login(request,user)
                 messages.success(request, 'Successfully Login')
-                return redirect('dashboard')
+                return redirect('postedjob')
             else:
                 messages.warning(request, 'Username and Password not valid.')
                 return redirect('companyLogin')
@@ -72,6 +71,29 @@ def addjob(request):
     }
     return render(request,'company/addjob.html',context)
 
+@login_required
+def editjob(request,myid):
+    jobdata = get_object_or_404(JobInfoModel, id=myid)
+    if request.method == 'POST':
+        form = JobForm(request.POST, instance=jobdata)
+        if form.is_valid():
+            form.save()
+            return redirect('postedjob')
+    else:
+        form = JobForm(instance=jobdata)
+    context = {
+        'form':form
+    }
+    return render(request,'company/editjob.html',context)
+
+@login_required
+def deletejob(request,myid):
+    jobdata = get_object_or_404(JobInfoModel, id=myid)
+    jobdata.delete()
+    
+    return redirect('postedjob')
+
+@login_required
 def postedjob(request):
     current_user = request.user
     jobdata = JobInfoModel.objects.filter(PostedBy=current_user)

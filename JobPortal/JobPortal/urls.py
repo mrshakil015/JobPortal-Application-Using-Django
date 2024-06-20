@@ -21,6 +21,9 @@ urlpatterns = [
     
     #--------------Job---------------
     path('addjob/', addjob,name="addjob"),
+    path('editjob/<str:myid>', editjob,name="editjob"),
+    path('viewjob/<str:myid>', viewjob,name="viewjob"),
+    path('deletejob/<str:myid>', deletejob,name="deletejob"),
     path('postedjob/', postedjob,name="postedjob"),
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
