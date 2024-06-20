@@ -44,7 +44,7 @@
 + CompanyName (Already in Employer Model)
 + Address (Already in Employer Model)
 + CompanyDescription (Already in Employer Model)
-+ JobDescription
++ JobSummary
 + Qualification
 + Salary
 + Deadline
@@ -53,6 +53,12 @@
 + TotalVacancy
 + JobType(FullTime,PartTime,Contractual,Internship,Freelance)
 + ExperienceLevel(Begineer,MidLevel,Experienced,TopLevel)
+
++ JobCategories (Manufacturer,Education, Training and Development, Software Development, Textile/Garments, IT Services)
++ JobResponsibilities
++ RequiredSkills
++ AdditionalRequirement
++ JobBenefits
 
 ## Job Applicant Model:
 + Applicant

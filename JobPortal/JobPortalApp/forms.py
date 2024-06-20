@@ -20,7 +20,14 @@ class JobForm(forms.ModelForm):
         }
         
         labels = {
+            "JobSummary":"Job Summary",
+            "Experience":"Experience (in Year)",
             "TotalVacancy":"Total Vanancy",
+            "JobResponsibilities":"Job Responsibilities",
+            "RequiredSkills":"Required Skills",
+            "AdditionalRequirement":"Additional Requirement",
+            "JobBenefits":"Job Benefits",
             "JobType":"Job Type",
             "ExperienceLevel":"Experience Level",
+            "JobCategories":"Job Categories",
         }

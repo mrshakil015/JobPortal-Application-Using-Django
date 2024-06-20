@@ -59,13 +59,17 @@ class WorkExperienceModel(models.Model):
     
 class JobInfoModel(models.Model):
     JobTitle = models.CharField(max_length=100, null=True)
-    JobDescription = models.TextField(null=True)
+    JobSummary = models.TextField(null=True)
     Qualification = models.CharField(max_length=100, null=True)
     Salary = models.CharField(max_length=100, null=True)
     Deadline = models.CharField(max_length=100, null=True)
     Designation = models.CharField(max_length=100, null=True)
     Experience = models.CharField(max_length=100, null=True)
     TotalVacancy = models.CharField(max_length=100, null=True)
+    JobResponsibilities = models.TextField(null=True)
+    RequiredSkills = models.TextField(null=True)
+    AdditionalRequirement = models.TextField(null=True)
+    JobBenefits = models.TextField(null=True)
     JOBTYPE = [
         ('Full Time','Full Time'),
         ('Part Time','Part Time'),
@@ -81,6 +85,16 @@ class JobInfoModel(models.Model):
         ('TopLevel','TopLevel'),
     ]
     ExperienceLevel = models.CharField(choices=EXPERIENCELEVEL, max_length=100, null=True)
+    
+    JOBCATEGORIES = [
+        ('Manufacturer','Manufacturer'),
+        ('Education','Education'),
+        ('Training and Development','Training and Development'),
+        ('Software Development','Software Development'),
+        ('Textile/Garments','Textile/Garments'),
+        ('IT Services','IT Services'),
+    ]
+    JobCategories = models.CharField(choices=JOBCATEGORIES, max_length=100, null=True)
     Created_at = models.DateField(auto_now_add=True,null=True)
     Updated_at = models.DateField(auto_now=True,null=True)
     PostedBy = models.ForeignKey(IonicJobUserModel, on_delete =models.CASCADE, null=True)
