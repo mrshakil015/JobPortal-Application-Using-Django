@@ -27,12 +27,15 @@
                         <div class="row job-details">
                             <div class="col-lg-6 col-sm-12 col-md-12">
                                 <p><i class="fas fa-briefcase"></i> <strong>Job Type:</strong> {{jobdata.JobType}}</p>
+                                <p><i class="fas fa-user"></i> <strong>Designation:</strong> {{jobdata.Designation}}</p>
                                 <p><i class="fas fa-flag"></i> <strong>Experience Level:</strong>
                                     {{jobdata.ExperienceLevel}}</p>
                                 <p><i class="fas fa-calendar-check"></i> <strong>Posted On:</strong>
                                     {{jobdata.Created_at}}</p>
                             </div>
                             <div class="col-lg-6 col-sm-12 col-md-12">
+                                <p><i class="fas fa-chart-bar"></i> <strong>Job Category:</strong>
+                                    {{jobdata.JobCategories}}</p>
                                 <p><i class="fas fa-user-plus"></i> <strong>Total Vacancy:</strong>
                                     {{jobdata.TotalVacancy}}</p>
                                 
@@ -65,7 +68,7 @@
                     
                     <div class="card-body-content container">
                         <div class="title">
-                            <h3><strong>Job Description</strong></h3>
+                            <h3><strong>Job Summary</strong></h3>
                         </div>
                         <hr>
                         <p>{{jobdata.JobSummary}}</p>
@@ -81,6 +84,31 @@
                         </div>
                         <hr>
                         <p><i class="fas fa-check"></i> {{jobdata.Experience}}</p>
+
+                        <div class="title">
+                            <h3><strong>Job Responsibilities</strong></h3>
+                        </div>
+                        <hr>
+                        <p>{{jobdata.JobResponsibilities}}</p>
+
+                        <div class="title">
+                            <h3><strong>Required Skills</strong></h3>
+                        </div>
+                        <hr>
+                        <p>{{jobdata.RequiredSkills}}</p>
+
+                        <div class="title">
+                            <h3><strong>Additional Requirement</strong></h3>
+                        </div>
+                        <hr>
+                        <p>{{jobdata.AdditionalRequirement}}</p>
+
+                        <div class="title">
+                            <h3><strong>Job Benefits</strong></h3>
+                        </div>
+                        <hr>
+                        <p>{{jobdata.JobBenefits}}</p>
+
                     </div>
                 </div>
                 <div class="card-footer d-flex justify-content-between">
