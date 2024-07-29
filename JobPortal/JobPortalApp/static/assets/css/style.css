@@ -6445,7 +6445,7 @@ height: 60px;
 }
 .browsejob .card .logo img {
 width: 100%;
-height:auto;
+height:100%;
 }
 .browsejob .job-info {
 display: flex;
